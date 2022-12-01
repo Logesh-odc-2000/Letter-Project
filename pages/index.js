@@ -5,84 +5,10 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
+import Object from './Object'
 
 
-const letter = [
-  {
-    role: 'அ',
-    imageUrl:
-      ' அ.png',
-    href: '/அ'
-  },
-  {
-    role: 'ஆ',
-    imageUrl:
-      ' ஆ.png',
-    href: '/ஆ'
-  },
-  {
-    role: 'இ',
-    imageUrl:
-      ' இ.png',
-    href: '/இ'
-  },
-  {
-    role: 'ஈ',
-    imageUrl:
-      ' ஈ.png',
-    href: '/ஈ'
-  },
-  {
-    role: 'உ',
-    imageUrl:
-      ' உ.png',
-    href: '/உ'
-  },
-  {
-    role: 'ஊ',
-    imageUrl:
-      ' ஊ.png',
-    href: '/ஊ'
-  },
-  {
-    role: 'எ',
-    imageUrl:
-      ' எ.png',
-    href: '/எ'
-  },
-  {
-    role: 'ஏ',
-    imageUrl:
-      ' ஏ.png',
-    href: '/ஏ'
-  },
-  {
-    role: 'ஐ',
-    imageUrl:
-      ' ஐ.png',
-    href: '/ஐ'
-  },
-  {
-    role: 'ஒ',
-    imageUrl:
-      ' ஒ.png',
-    href: '/ஒ'
-  },
-  {
-    role: 'ஓ',
-    imageUrl:
-      ' ஓ.png',
-    href: '/ஓ'
-  },
-  {
-    role: 'ஔ',
-    imageUrl:
-      ' ஔ.png',
-    href: '/ஔ'
-  },
-
-  // More letter...
-]
+const letter = Object
 
 const navigation = {
   solutions: [
@@ -197,7 +123,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Index() {
   return (
     <>
       <div className="min-h-full">
@@ -388,19 +314,14 @@ export default function Example() {
                       className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
                     >
                       <div className="flex flex-1 flex-col p-8">
+                      <Link href={person.href}>
                         <img className="mx-auto h-32 w-32 flex-shrink-0" src={person.imageUrl} alt="" />
+                        </Link>
                         <h3 className="mt-6 text-sm font-medium text-gray-900">{person.name}</h3>
                         <dl className="mt-1 flex flex-grow flex-col justify-between">
                           <dt className="sr-only">Title</dt>
                           <dd className="text-sm text-gray-500">{person.title}</dd>
                           <dt className="sr-only">Role</dt>
-                          <dd className="mt-3">
-                            <span>
-                              <Link href={person.href}
-                                className="rounded-full bg-gray-100 px-2 py-1 text-2xl font-medium text-blue-900">
-                                {person.role}</Link>
-                            </span>
-                          </dd>
                         </dl>
                       </div>
 
@@ -441,163 +362,163 @@ export default function Example() {
         </div>
       </div>
       <footer className="bg-gray-800" aria-labelledby="footer-heading">
-      <h2 id="footer-heading" className="sr-only">
-        Footer
-      </h2>
-      <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <div className="pb-8 xl:grid xl:grid-cols-5 xl:gap-8">
-          <div className="grid grid-cols-2 gap-8 xl:col-span-4">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-base font-medium text-white">Solutions</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.solutions.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-300 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+        <h2 id="footer-heading" className="sr-only">
+          Footer
+        </h2>
+        <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+          <div className="pb-8 xl:grid xl:grid-cols-5 xl:gap-8">
+            <div className="grid grid-cols-2 gap-8 xl:col-span-4">
+              <div className="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 className="text-base font-medium text-white">Solutions</h3>
+                  <ul role="list" className="mt-4 space-y-4">
+                    {navigation.solutions.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-base text-gray-300 hover:text-white">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-12 md:mt-0">
+                  <h3 className="text-base font-medium text-white">Support</h3>
+                  <ul role="list" className="mt-4 space-y-4">
+                    {navigation.support.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-base text-gray-300 hover:text-white">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-white">Support</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.support.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-300 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              <div className="md:grid md:grid-cols-2 md:gap-8">
+                <div>
+                  <h3 className="text-base font-medium text-white">Company</h3>
+                  <ul role="list" className="mt-4 space-y-4">
+                    {navigation.company.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-base text-gray-300 hover:text-white">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-12 md:mt-0">
+                  <h3 className="text-base font-medium text-white">Legal</h3>
+                  <ul role="list" className="mt-4 space-y-4">
+                    {navigation.legal.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-base text-gray-300 hover:text-white">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-base font-medium text-white">Company</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-300 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-base font-medium text-white">Legal</h3>
-                <ul role="list" className="mt-4 space-y-4">
-                  {navigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <a href={item.href} className="text-base text-gray-300 hover:text-white">
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="mt-12 xl:mt-0">
+              <h3 className="text-base font-medium text-white">Language &amp; Currency</h3>
+              <form className="mt-4 sm:max-w-xs">
+                <fieldset className="w-full">
+                  <label htmlFor="language" className="sr-only">
+                    Language
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="language"
+                      name="language"
+                      className="block w-full appearance-none rounded-md border border-transparent bg-gray-700 bg-none py-2 pl-3 pr-10 text-base text-white focus:border-white focus:outline-none focus:ring-white sm:text-sm"
+                      defaultValue="English"
+                    >
+                      <option>English</option>
+                      <option>French</option>
+                      <option>German</option>
+                      <option>Japanese</option>
+                      <option>Spanish</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+                      <ChevronDownIcon className="h-4 w-4 text-white" aria-hidden="true" />
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset className="mt-4 w-full">
+                  <label htmlFor="currency" className="sr-only">
+                    Currency
+                  </label>
+                  <div className="relative mt-1.5">
+                    <select
+                      id="currency"
+                      name="currency"
+                      className="block w-full appearance-none rounded-md border border-transparent bg-gray-700 bg-none py-2 pl-3 pr-10 text-base text-white focus:border-white focus:outline-none focus:ring-white sm:text-sm"
+                      defaultValue="AUD"
+                    >
+                      <option>ARS</option>
+                      <option>AUD</option>
+                      <option>CAD</option>
+                      <option>CHF</option>
+                      <option>EUR</option>
+                      <option>GBP</option>
+                      <option>JPY</option>
+                      <option>USD</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+                      <ChevronDownIcon className="h-4 w-4 text-white" aria-hidden="true" />
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
             </div>
           </div>
-          <div className="mt-12 xl:mt-0">
-            <h3 className="text-base font-medium text-white">Language &amp; Currency</h3>
-            <form className="mt-4 sm:max-w-xs">
-              <fieldset className="w-full">
-                <label htmlFor="language" className="sr-only">
-                  Language
-                </label>
-                <div className="relative">
-                  <select
-                    id="language"
-                    name="language"
-                    className="block w-full appearance-none rounded-md border border-transparent bg-gray-700 bg-none py-2 pl-3 pr-10 text-base text-white focus:border-white focus:outline-none focus:ring-white sm:text-sm"
-                    defaultValue="English"
-                  >
-                    <option>English</option>
-                    <option>French</option>
-                    <option>German</option>
-                    <option>Japanese</option>
-                    <option>Spanish</option>
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
-                    <ChevronDownIcon className="h-4 w-4 text-white" aria-hidden="true" />
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset className="mt-4 w-full">
-                <label htmlFor="currency" className="sr-only">
-                  Currency
-                </label>
-                <div className="relative mt-1.5">
-                  <select
-                    id="currency"
-                    name="currency"
-                    className="block w-full appearance-none rounded-md border border-transparent bg-gray-700 bg-none py-2 pl-3 pr-10 text-base text-white focus:border-white focus:outline-none focus:ring-white sm:text-sm"
-                    defaultValue="AUD"
-                  >
-                    <option>ARS</option>
-                    <option>AUD</option>
-                    <option>CAD</option>
-                    <option>CHF</option>
-                    <option>EUR</option>
-                    <option>GBP</option>
-                    <option>JPY</option>
-                    <option>USD</option>
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
-                    <ChevronDownIcon className="h-4 w-4 text-white" aria-hidden="true" />
-                  </div>
-                </div>
-              </fieldset>
+          <div className="border-t border-gray-700 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">
+            <div>
+              <h3 className="text-base font-medium text-white">Subscribe to our newsletter</h3>
+              <p className="mt-2 text-base text-gray-300">
+                The latest news, articles, and resources, sent to your inbox weekly.
+              </p>
+            </div>
+            <form className="mt-4 sm:flex sm:max-w-md lg:mt-0">
+              <label htmlFor="email-address" className="sr-only">
+                Email address
+              </label>
+              <input
+                type="email"
+                name="email-address"
+                id="email-address"
+                autoComplete="email"
+                required
+                className="w-full min-w-0 appearance-none rounded-md border border-transparent bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:border-white focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 sm:max-w-xs"
+                placeholder="Enter your email"
+              />
+              <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                <button
+                  type="submit"
+                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-500 py-2 px-4 text-base font-medium text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                >
+                  Subscribe
+                </button>
+              </div>
             </form>
           </div>
-        </div>
-        <div className="border-t border-gray-700 pt-8 lg:flex lg:items-center lg:justify-between xl:mt-0">
-          <div>
-            <h3 className="text-base font-medium text-white">Subscribe to our newsletter</h3>
-            <p className="mt-2 text-base text-gray-300">
-              The latest news, articles, and resources, sent to your inbox weekly.
+          <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+            <div className="flex space-x-6 md:order-2">
+              {navigation.social.map((item) => (
+                <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                </a>
+              ))}
+            </div>
+            <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
+              &copy; 2020 Your Company, Inc. All rights reserved.
             </p>
           </div>
-          <form className="mt-4 sm:flex sm:max-w-md lg:mt-0">
-            <label htmlFor="email-address" className="sr-only">
-              Email address
-            </label>
-            <input
-              type="email"
-              name="email-address"
-              id="email-address"
-              autoComplete="email"
-              required
-              className="w-full min-w-0 appearance-none rounded-md border border-transparent bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:border-white focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 sm:max-w-xs"
-              placeholder="Enter your email"
-            />
-            <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-              <button
-                type="submit"
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-500 py-2 px-4 text-base font-medium text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
-              >
-                Subscribe
-              </button>
-            </div>
-          </form>
         </div>
-        <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
-          <div className="flex space-x-6 md:order-2">
-            {navigation.social.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
-                <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-          <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
-            &copy; 2020 Your Company, Inc. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
+      </footer>
     </>
   )
 }
