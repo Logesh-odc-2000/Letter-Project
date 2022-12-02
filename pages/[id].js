@@ -1,6 +1,17 @@
-import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/20/solid'
 import { useRouter } from 'next/router'
-
+import React from 'react';
+import Carousel from 'react-material-ui-carousel'
+import { Paper, Button } from '@mui/material'
+var items = [
+    {
+        name: "Random Name #1",
+        description: "Probably the most random thing you have ever seen!"
+    },
+    {
+        name: "Random Name #2",
+        description: "Hello World!"
+    }
+]
 const data = {
     "அ": [
         {
@@ -554,39 +565,45 @@ const data = {
 
 
 
-export default function Id() {
+export default function Id(props) {
     const router = useRouter()
     const { id } = router.query
     console.log(id);
     return (
-        <div >
-            <div className="bg-white rounded-lg border-green ">
-                <div className="mx-auto max-w-2xl py-16${} px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-                    <h2 className="text-3xl   font-bold tracking-tight text-gray-900">{id}   Letters</h2>
+        <>
+
+            <div className="bg-gray-100 h-full h-screen">
+
+                <div className=" mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+                    <h2 className="text-2xl font-bold tracking-tight text-gray-900">{id} Letters</h2>
                     <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                        {id && data[id].map((product) => (
-                            <div key={product.id} className="group relative">
-                                <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                                    <img
-                                        src={product.imgSrc}
-                                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                    />
-                                </div>
-                                <div className="mt-4 flex  justify-between">
-                                    <div>
-                                        <h3 className="text-xl text-center px-16 text-gray-700">
-                                            <a href={product.href}>
-                                                <span aria-hidden="true" className="absolute inset-0" />
-                                                {product.name}
-                                            </a>
-                                        </h3>
+                        <div className="overflow-hidden bg-gray-200 shadow sm:rounded-lg">
+                            <div className="px-4 py-5 sm:p-6">{/* Content goes here */}
+                                <div className="overflow-hidden bg-gray-50 shadow sm:rounded-lg">
+                                    <div className="px-4 py-5 sm:p-6">{/* Content goes here */}
+                                        <Carousel>
+                                            {id && data[id].map((product) => (
+                                                <>
+                                                    <div className="min-h-80 aspect-w-1 aspect-h-1 w-full h-full  overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+                                                        <img
+                                                            src={product.imgSrc}
+                                                            className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                                                        />
+                                                    </div>
+                                                    <div className=" text-center  text-2xl">
+                                                        {product.name}
+                                                    </div>
+                                                </>
+                                            ))}
+                                        </Carousel>
                                     </div>
                                 </div>
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </div>
-                </div>
-        </div>
+            </div>
+        </>
+
     )
 }
