@@ -1,17 +1,10 @@
 import { useRouter } from 'next/router'
 import React from 'react';
-import Carousel from 'react-material-ui-carousel'
-import { Paper, Button } from '@mui/material'
-var items = [
-    {
-        name: "Random Name #1",
-        description: "Probably the most random thing you have ever seen!"
-    },
-    {
-        name: "Random Name #2",
-        description: "Hello World!"
-    }
-]
+import Carousel from 'react-elastic-carousel'
+import Object from './Object'
+
+const obj = Object
+
 const data = {
     "அ": [
         {
@@ -572,35 +565,38 @@ export default function Id(props) {
     return (
         <>
 
-            <div className="bg-gray-100 h-full h-screen">
+            <div className="bg-gray-100  h-full h-screen">
 
-                <div className=" mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-900">{id} Letters</h2>
-                    <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                        <div className="overflow-hidden bg-gray-200 shadow sm:rounded-lg">
-                            <div className="px-4 py-5 sm:p-6">{/* Content goes here */}
-                                <div className="overflow-hidden bg-gray-50 shadow sm:rounded-lg">
-                                    <div className="px-4 py-5 sm:p-6">{/* Content goes here */}
-                                        <Carousel>
-                                            {id && data[id].map((product) => (
-                                                <>
-                                                    <div className="min-h-80 aspect-w-1 aspect-h-1 w-full h-full  overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                                                        <img
-                                                            src={product.imgSrc}
-                                                            className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                                                        />
-                                                    </div>
-                                                    <div className=" text-center  text-2xl">
-                                                        {product.name}
-                                                    </div>
-                                                </>
-                                            ))}
-                                        </Carousel>
-                                    </div>
-                                </div>
-                            </div>
+                <div className="  mx-auto max-w-4xl   sm:py-28 sm:px-10 object-cover h-96 w-full lg:max-w-2xl lg:px-10">
+                    <div className="  text-4xl px-16 font-bold tracking-tight text-gray-900">
+                        <div className=' inline-block px-4'>
+                            <img
+                                src={`${id}.png`}
+                                className="h-10 w-10 inline-block " />
                         </div>
+                        Letters
                     </div>
+                    <div className='py-10 rounded-lg'>
+                        <Carousel>
+                            {id && data[id].map((product) => (
+                                <>
+                                    <div className='object-cover'>
+                                        <div className=" bg-gray-200  xl:h-96">
+                                            <img
+                                                src={product.imgSrc}
+                                                className="h-full w-full object-cover "
+                                            />
+                                        </div>
+                                        <div className=" text-center  text-2xl">
+                                            {product.name}
+                                        </div>
+                                    </div>
+
+                                </>
+                            ))}
+                        </Carousel>
+                    </div>
+
                 </div>
             </div>
         </>
