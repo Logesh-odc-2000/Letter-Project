@@ -1,73 +1,61 @@
 const data = [{
     role: 'அ',
-    imageUrl:
-        ' அ.png',
+    imageUrl:' அ.png',
     href: '/அ'
 },
 {
     role: 'ஆ',
-    imageUrl:
-        ' ஆ.png',
+    imageUrl:' ஆ.png',
     href: '/ஆ'
 },
 {
     role: 'இ',
-    imageUrl:
-        ' இ.png',
+    imageUrl:' இ.png',
     href: '/இ'
 },
 {
     role: 'ஈ',
-    imageUrl:
-        ' ஈ.png',
+    imageUrl:' ஈ.png',
     href: '/ஈ'
 },
 {
     role: 'உ',
-    imageUrl:
-        ' உ.png',
+    imageUrl:' உ.png',
     href: '/உ'
 },
 {
     role: 'ஊ',
-    imageUrl:
-        ' ஊ.png',
+    imageUrl:' ஊ.png',
     href: '/ஊ'
 },
 {
     role: 'எ',
-    imageUrl:
-        ' எ.png',
+    imageUrl:' எ.png',
     href: '/எ'
 },
 {
     role: 'ஏ',
-    imageUrl:
-        ' ஏ.png',
+    imageUrl:' ஏ.png',
     href: '/ஏ'
 },
 {
     role: 'ஐ',
-    imageUrl:
-        ' ஐ.png',
+    imageUrl:' ஐ.png',
     href: '/ஐ'
 },
 {
     role: 'ஒ',
-    imageUrl:
-        ' ஒ.png',
+    imageUrl:' ஒ.png',
     href: '/ஒ'
 },
 {
     role: 'ஓ',
-    imageUrl:
-        ' ஓ.png',
+    imageUrl:' ஓ.png',
     href: '/ஓ'
 },
 {
     role: 'ஔ',
-    imageUrl:
-        ' ஔ.png',
+    imageUrl:' ஔ.png',
     href: '/க'
 }]
 
