@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Object from './Object'
 
 
-const letter = Object
+const letter = Object.data
 
 const navigation = {
   solutions: [
@@ -315,8 +315,8 @@ export default function Index() {
                     >
                       <div className="flex flex-1 flex-col p-8">
                         <Link href={person.href}>
-                          <img className="mx-auto h-32 w-32 flex-shrink-0" src={person.imageUrl} alt="" />
-                        </Link>
+                          <h1 className=" text-5xl">{person.imageUrl}</h1> 
+                          </Link>
                         <h3 className="mt-6 text-sm font-medium text-gray-900">{person.name}</h3>
                         <dl className="mt-1 flex flex-grow flex-col justify-between">
                           <dt className="sr-only">Title</dt>
