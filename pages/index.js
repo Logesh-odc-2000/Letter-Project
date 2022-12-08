@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Object from './Object'
 
 
-const letter = Object.data
+const letters = Object.data
 
 const navigation = {
   solutions: [
@@ -308,19 +308,19 @@ export default function Index() {
             <div className="rounded-lg bg-gray-100 px-5 py-6 shadow sm:px-6">
               <div className="h-full  border-gray-200" >
                 <ul role="list" className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                  {letter.map((person) => (
+                  {letters.map((letter) => (
                     <li
-                      key={person.email}
+                      key={letter.email}
                       className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
                     >
                       <div className="flex flex-1 flex-col p-8">
-                        <Link href={person.href}>
-                          <h1 className=" text-5xl">{person.imageUrl}</h1> 
+                        <Link href={letter.href}>
+                          <h1 className=" text-5xl">{letter.imageUrl}</h1> 
                           </Link>
-                        <h3 className="mt-6 text-sm font-medium text-gray-900">{person.name}</h3>
+                        <h3 className="mt-6 text-sm font-medium text-gray-900">{letter.name}</h3>
                         <dl className="mt-1 flex flex-grow flex-col justify-between">
                           <dt className="sr-only">Title</dt>
-                          <dd className="text-sm text-gray-500">{person.title}</dd>
+                          <dd className="text-sm text-gray-500">{letter.title}</dd>
                           <dt className="sr-only">Role</dt>
                         </dl>
                       </div>

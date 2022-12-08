@@ -1,66 +1,74 @@
 const data = [{
     role: 'அ',
-    imageUrl:' அ-ஔ',
-    href: 'அ முதல் ஔ வரை'
+    imageUrl: ' அ-ஔ',
+    href: 'அ  '
 },
 {
     role: 'ஆ',
-    imageUrl:' க-ன ',
-    href: 'ஆ'
+    imageUrl: ' க-ன ',
+    href: 'க'
 },
 {
     role: 'இ',
-    imageUrl:' கா-னா',
-    href: 'இ'
+    imageUrl: ' கா-னா',
+    href: 'கா'
 },
 {
     role: 'ஈ',
-    imageUrl:' கி-னி',
-    href: 'ஈ'
+    imageUrl: ' கி-னி',
+    href: 'கி'
 },
 {
     role: 'உ',
-    imageUrl:' கீ-னி',
-    href: 'உ'
+    imageUrl: ' கீ-னி',
+    href: 'கீ'
 },
 {
     role: 'ஊ',
-    imageUrl:' கு-னு ',
-    href: 'ஊ'
+    imageUrl: ' கு-னு ',
+    href: 'கு'
 },
 {
     role: 'எ',
-    imageUrl:'கூ-னூ',
-    href: 'எ'
+    imageUrl: 'கூ-னூ',
+    href: 'கூ'
 },
 {
     role: 'ஏ',
-    imageUrl:' கெ-னெ',
-    href: 'ஏ'
+    imageUrl: ' கெ-னெ',
+    href: 'கெ'
 },
 {
     role: 'ஐ',
-    imageUrl:' கே-னே',
-    href: 'ஐ'
-} ,
+    imageUrl: ' கே-னே',
+    href: 'கே'
+}, {
+    role: 'ஐ',
+    imageUrl: ' கை-னை',
+    href: 'கை'
+},
 {
     role: 'ஒ',
-    imageUrl:' கொ-னொ ',
-    href: 'ஒ'
+    imageUrl: ' கொ-னொ ',
+    href: 'கொ'
 },
 {
     role: 'ஓ',
-    imageUrl:'கோ-னோ',
-    href: 'ஓ'
+    imageUrl: 'கோ-னோ',
+    href: 'கோ'
 },
 {
     role: 'ஔ',
-    imageUrl:' கெள-னெள',
-    href: 'ஔ'
-} ]
+    imageUrl: ' கெள-னெள',
+    href: 'கெள'
+},{
+    role: 'ஓ',
+    imageUrl: 'க்-ன்',
+    href: 'கோ'
+},]
 
 
-const Data={
+const Data = {
     "அ முதல் ஔ வரை": [
         {
             "அ முதல் ஔ வரை/அ": [
@@ -5187,4 +5195,4 @@ const Data={
 }
 
 
-export default {data,Data}
+export default { data, Data }

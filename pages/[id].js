@@ -8,7 +8,7 @@ const data = Object.Data
 
 export default function Id() {
     const router = useRouter()
-    const { id } = router.query
+    const { id,id1 } = router.query
     console.log(id);
     return (
         <>
@@ -24,17 +24,19 @@ export default function Id() {
                     </div>
                     <div className='py-10 rounded-lg'>
                         <Carousel>
-                            {data&&data[id].map((product ) => (
+                            {data&& data[id].map((lettter ) => (
                                 <>
                                     <div className='object-cover'>
+                                        {data&&data[id1].map((lettter)=>(
                                         <div className=" bg-gray-200  xl:h-96">
-                                            <img key={product.id}
-                                                src={product.imgSrc}
+                                            <img key={lettter.id}
+                                                src={lettter.imgSrc}
                                                 className="h-full w-full object-cover "
                                             />
                                         </div>
-                                        <div key={product.id} className=" text-center font-bold  first-letter:text-blue-700 text-red-500  text-2xl">
-                                            {product.name}
+                                        ))}
+                                        <div key={lettter.id} className=" text-center font-bold  first-letter:text-blue-700 text-red-500  text-2xl">
+                                            {lettter.name}
                                         </div>
                                     </div>
 
